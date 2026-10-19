@@ -1,12 +1,12 @@
 # 全書大綱
 
-這是規劃用的大綱，`zh-TW/src/SUMMARY.md` 只列已經寫好的集數。寫完一章就把那一章加進 `SUMMARY.md`。
+這是規劃用的大綱。正文已全部寫完，實際集數以 `zh-TW/src/SUMMARY.md` 為準；與原規劃不同處：第 15 章拆成 8 集（`cacheLife`、`cacheTag` 各一集），附錄一不含 Vitest（改為第 11 章）。
 
 鎖定版本：React 19.3、Vite 8、React Router 8（Declarative mode）、Next.js 16、Node.js 24 LTS、npm。
 
 ## 第一部
 
-### 第 1 章 JavaScript 第一步（已完成）
+### 第 1 章 JavaScript 第一步
 
 網頁是怎麼組成的、安裝 Node.js 與 VS Code、第一個程式、`const` 與 `let`、註解、數字與算術、字串與樣板字面值、布林值與比較、`if` 與 `else`、邏輯運算子、三元運算子、陣列基礎、`for...of`、物件基礎、`null` 與 `undefined`、綜合練習
 

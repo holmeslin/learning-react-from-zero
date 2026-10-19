@@ -1,0 +1,159 @@
+# 物件解構
+
+## 本集目標
+
+用一行把物件裡的多個屬性拆出來，變成各自獨立的變數。
+
+## 正文
+
+### 一直重複打 `user.`
+
+```js
+const user = { name: "小明", age: 20, city: "台北" };
+
+console.log(`${user.name}，${user.age} 歲，住在${user.city}`);
+```
+
+```text
+小明，20 歲，住在台北
+```
+
+每次都要打 `user.`，有點煩。如果想先把屬性拿出來存成變數，原本的寫法是：
+
+```js
+const user = { name: "小明", age: 20, city: "台北" };
+
+const name = user.name;
+const age = user.age;
+const city = user.city;
+
+console.log(name, age, city);
+```
+
+```text
+小明 20 台北
+```
+
+### 解構
+
+**解構**（destructuring）可以把上面三行縮成一行：
+
+```js
+const user = { name: "小明", age: 20, city: "台北" };
+
+const { name, age, city } = user;
+
+console.log(name, age, city);
+```
+
+```text
+小明 20 台北
+```
+
+`const { name, age, city } = user;` 的意思是：從 `user` 裡，把 `name`、`age`、`city` 這三個屬性拿出來，各自存成同名的變數。
+
+左邊的大括號看起來像物件，但這不是在建立物件，而是在**描述你想拿哪些屬性**。名字要和物件裡的屬性名稱完全一樣。
+
+不用全拿，只拿需要的：
+
+```js
+const user = { name: "小明", age: 20, city: "台北" };
+
+const { name } = user;
+
+console.log(name);
+```
+
+```text
+小明
+```
+
+### 換名字
+
+屬性名稱和你想用的變數名稱不一樣的時候，用冒號改名：
+
+```js
+const user = { name: "小明", age: 20 };
+
+const { name: userName } = user;
+
+console.log(userName);
+```
+
+```text
+小明
+```
+
+`name: userName` 的意思是「拿 `name` 屬性，存成叫 `userName` 的變數」。注意方向：冒號左邊是原本的屬性，右邊是新名字。
+
+### 預設值
+
+屬性不存在時，可以給預設值：
+
+```js
+const user = { name: "小明" };
+
+const { name, age = 18 } = user;
+
+console.log(name, age);
+```
+
+```text
+小明 18
+```
+
+### 直接在函式參數裡解構
+
+這是 React 裡最重要的用法。函式如果接收一個物件，可以在參數的位置直接解構：
+
+```js
+function introduce(user) {
+  return `${user.name}，${user.age} 歲`;
+}
+
+function introduceShort({ name, age }) {
+  return `${name}，${age} 歲`;
+}
+
+const user = { name: "小明", age: 20 };
+
+console.log(introduce(user));
+console.log(introduceShort(user));
+```
+
+```text
+小明，20 歲
+小明，20 歲
+```
+
+第二個函式的參數是 `{ name, age }`，也就是「接收一個物件，馬上把 `name` 和 `age` 拆出來」。函式裡面就不用再 `user.` 了。
+
+先預告：第 4 章你會學到，React 元件收到的資料是一個叫 `props` 的物件，幾乎所有元件都是這樣寫：`function Greeting({ name }) { ... }`。現在把這個寫法看熟，之後會省很多力氣。
+
+### 巢狀解構
+
+物件裡面還有物件，也可以一層一層拆：
+
+```js
+const user = {
+  name: "小明",
+  address: { city: "台北", zip: "100" },
+};
+
+const { address: { city } } = user;
+
+console.log(city);
+```
+
+```text
+台北
+```
+
+這種寫法難讀，建議先拿出 `address`，再從 `address` 拿 `city`，分兩步比較清楚。
+
+## 重點整理
+
+- `const { a, b } = obj` 把物件的屬性拆成同名的變數。
+- 用 `{ a: newName }` 改名，用 `{ a = 預設值 }` 設預設值。
+- 函式參數可以直接解構：`function f({ name, age }) { ... }`。
+- 巢狀解構能用但難讀，通常分兩步寫比較好。
