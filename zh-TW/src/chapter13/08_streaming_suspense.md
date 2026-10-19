@@ -115,7 +115,7 @@ export default async function BookPage(props: PageProps<"/books/[id]">) {
 
 ### 確認真的是串流
 
-怎麼確認不是整頁等 3 秒才送出？用 `curl` 量一下時間（Windows 10 以後的 PowerShell 也有 `curl.exe`）：
+怎麼確認不是整頁等 3 秒才送出？用 `curl` 量一下時間（Windows 10 以後的 PowerShell 也有 `curl.exe`，但要把 `/dev/null` 改成 `NUL`）：
 
 ```bash
 curl -s -o /dev/null -w "第一個位元組：%{time_starttransfer} 秒，全部完成：%{time_total} 秒\n" http://localhost:3000/books/1

@@ -19,6 +19,8 @@ npm run serve          # 在瀏覽器預覽，存檔後自動重新整理
 npm run build          # 輸出到 zh-TW/book/
 ```
 
+前言裡的 `react-book-src.zip` 只在 CI 部署時產生，本機預覽點下去會找不到檔案，這是正常的。
+
 部署流程在 `.github/workflows/deploy.yml`，推上 `main` 就會自動發布到 GitHub Pages。
 
 ## 貢獻

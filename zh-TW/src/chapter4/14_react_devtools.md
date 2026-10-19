@@ -24,7 +24,7 @@ React 官方提供 Chrome、Firefox、Edge 三種瀏覽器的擴充功能。到�
 
 點進 Components 分頁，左邊會是一棵樹，列出畫面上所有的元件，包含你自己寫的 `App`、`ProductCard`，和嵌在裡面的結構。這和你寫的程式碼的結構是一樣的：`App` 在最外面，它裡面有好幾個 `ProductCard`。
 
-用上一集的畫面試試看：把 `src/App.jsx` 換成下面的內容，讓畫面有幾個元件可以看：
+試試看：把 `src/App.jsx` 換成下面的內容，讓畫面有幾個元件可以看：
 
 ```jsx
 import ProductCard from "./ProductCard.jsx";

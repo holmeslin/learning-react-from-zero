@@ -94,7 +94,7 @@ test("載入失敗時顯示錯誤訊息", async () => {
 
 如果用 `getByText` 而不是 `findByText`：
 
-```tsx
+```tsx,ignore
 render(<UserList loadUsers={loadUsers} />);
 expect(screen.getByText("小明")).toBeInTheDocument();
 ```

@@ -53,7 +53,7 @@ export async function signThenLeave(formData: FormData) {
 
 打開 <http://localhost:3000/guestbook/new>，填完送出，你會被帶回 `/guestbook`，新留言已經在列表裡了。
 
-目前如果名字或留言是空的，函式什麼都不做就 `return`，使用者按了沒反應。這不是好設計，第 8 集會改善。
+目前如果名字或留言是空的，函式什麼都不做就 `return`，使用者按了沒反應。這不是好設計，但這一頁只是用來示範 `redirect`，先維持簡單；要把錯誤顯示給使用者，就用上一集 `useActionState` 的做法。
 
 ### 順序很重要：先 `revalidatePath`，再 `redirect`
 

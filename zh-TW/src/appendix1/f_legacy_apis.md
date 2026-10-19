@@ -28,7 +28,7 @@ function NewInput({ ref }) {
 }
 ```
 
-兩種寫法在 React 19 都能運作。我實際測試，用 `forwardRef` 寫的元件，父元件還是拿得到 `<input>` 元素。但是新的程式碼用第二種就好，更簡短，也少一層包裝。
+兩種寫法在 React 19 都能運作，用 `forwardRef` 寫的元件，父元件還是拿得到 `<input>` 元素。但是新的程式碼用第二種就好，更簡短，也少一層包裝。
 
 ### `Context.Provider`：現在可以直接用 Context
 
@@ -50,7 +50,7 @@ React 19 之後，可以把 Context 本身當成元件用：
 </ThemeContext>
 ```
 
-兩種寫法在 React 19 都能運作，我測試過，裡面的元件都能用 `useContext` 讀到對應的值（`dark`、`blue`）。新的程式碼用第二種。
+兩種寫法在 React 19 都能運作，裡面的元件都能用 `useContext` 讀到 `"dark"`。新的程式碼用第二種。
 
 ### `defaultProps`：函式元件已經不支援了
 
@@ -63,7 +63,7 @@ function Greeting({ name }) {
 Greeting.defaultProps = { name: "訪客" };
 ```
 
-在 React 19，函式元件的 `defaultProps` **會被忽略**。我測試的結果是畫面顯示「你好，undefined」，預設值沒有生效，也沒有任何警告。
+在 React 19，函式元件的 `defaultProps` **會被忽略**。實際執行，畫面顯示「你好，undefined」，預設值沒有生效，也沒有任何警告。
 
 替代的寫法是用 JavaScript 的預設參數：
 

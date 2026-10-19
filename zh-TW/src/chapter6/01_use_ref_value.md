@@ -22,7 +22,7 @@ export default function App() {
   return (
     <>
       <p>
-        ref：{countRef.current}　state：{count}
+        ref：{countRef.current}，state：{count}
       </p>
       <button
         onClick={() => {
@@ -45,7 +45,7 @@ export default function App() {
 照順序操作：
 
 1. 連按三次「ref +1」。畫面上的 `ref：` 還是 0，但 Console 印出 1、2、3。
-2. 按一下「state +1」。畫面一口氣變成 `ref：3　state：1`。
+2. 按一下「state +1」。畫面一口氣變成 `ref：3，state：1`。
 
 ```text
 ref 現在是 1
@@ -55,7 +55,7 @@ ref 現在是 3
 
 `countRef.current` 確實一直在變，只是改它不會通知 React 重新渲染，所以畫面沒更新。直到你按了 state 的按鈕觸發渲染，畫面才讀到最新的值。
 
-這個實驗是為了讓你看清楚 ref 和 state 的差別。實際寫程式時，**不要在渲染過程中讀寫 `ref.current`**，否則元件的畫面會變得不可預測。ref 只在事件處理函式和 Effect 裡讀寫。
+這個實驗是為了讓你看清楚 ref 和 state 的差別。實際寫程式時，**不要在渲染過程中讀寫 `ref.current`**，否則元件的畫面會變得不可預測。ref 只在事件處理函式和 Effect 裡讀寫。（Vite 範本內建的 ESLint 也會在 `{countRef.current}` 那行畫紅線提醒你，這個實驗看完就改掉。）
 
 ### 什麼時候用 ref
 
@@ -90,7 +90,7 @@ export default function Stopwatch() {
 }
 ```
 
-`setInterval` 會回傳一個編號，之後要停止就得拿這個編號去呼叫 `clearInterval`。這個編號需要在「開始」和「停止」兩個按鈕之間共用，但它不會顯示在畫面上，所以放在 ref 最合適。會顯示在畫面上的 `seconds` 則用 state。
+`setInterval` 和第 2 章的 `setTimeout` 很像，差別是它每隔固定的時間就執行一次函式，直到你叫它停。它會回傳一個編號，之後要停止就得拿這個編號去呼叫 `clearInterval`。這個編號需要在「開始」和「停止」兩個按鈕之間共用，但它不會顯示在畫面上，所以放在 ref 最合適。會顯示在畫面上的 `seconds` 則用 state。
 
 這個範例有個小缺點：如果元件在計時中途消失，計時器還會繼續跑。第 5 集會教你怎麼處理。
 

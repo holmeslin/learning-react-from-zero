@@ -130,10 +130,10 @@ export async function like(formData: FormData) {
 
 `like` 一開始就檢查 `id` 是不是字串，不是的話什麼都不做。`likeMessage` 裡找不到留言也會直接回傳。這就是上一集學的：不相信收到的任何資料。
 
-然後新增按鈕元件 `app/ui/like-button.tsx`：
+然後新增按鈕元件 `app/ui/message-like-button.tsx`（第 13 章已經有一個給書本用的 `like-button.tsx`，這裡換個檔名，不要覆蓋它）：
 
 ```tsx
-// app/ui/like-button.tsx
+// app/ui/message-like-button.tsx
 "use client";
 
 import { useOptimistic } from "react";
@@ -165,7 +165,7 @@ export function LikeButton({ id, likes }: { id: string; likes: number }) {
 
 ```tsx
 // app/ui/guestbook-board.tsx（只列出有改的部分）
-import { LikeButton } from "@/app/ui/like-button";
+import { LikeButton } from "@/app/ui/message-like-button";
 
 // 在 addOptimisticMessage({ ... }) 裡多加一行
 //   likes: 0,

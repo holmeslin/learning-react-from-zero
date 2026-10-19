@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 - **檔名 `route.ts`**：只要資料夾裡有 `route.ts`，這個網址就是一個 API。路徑就是資料夾的路徑，這裡是 `/api/messages`。
 - **匯出的函式名稱就是 HTTP 方法**：`GET` 處理 `GET` 請求，`POST` 處理 `POST` 請求。支援 `GET`、`POST`、`PUT`、`PATCH`、`DELETE`、`HEAD`、`OPTIONS`。沒寫的方法，Next.js 自動回傳 405（不允許這個方法）。
 - **用標準的 `Request` 和 `Response`**：這是瀏覽器和 Node.js 都有的標準，不是 Next.js 發明的。`Response.json(資料)` 會把資料轉成 JSON 回應。
-- **還是要驗證輸入**：`POST` 是公開的入口，和第 14 集一樣。我們直接用同一個 `validateMessage`。`request.json()` 如果收到不是 JSON 的內容會丟出錯誤，所以後面接 `.catch(() => null)`，這時候 `body` 是 `null`，`body?.name` 就是 `undefined`，驗證函式會把它擋下來。
+- **還是要驗證輸入**：`POST` 是公開的入口，和第 14 章一樣。我們直接用同一個 `validateMessage`。`request.json()` 如果收到不是 JSON 的內容會丟出錯誤，所以後面接 `.catch(() => null)`，這時候 `body` 是 `null`，`body?.name` 就是 `undefined`，驗證函式會把它擋下來。
 - **`revalidateTag("messages", { expire: 0 })`**：Route Handler 裡不能用 `updateTag`（它只限 Server Function），所以改用 `revalidateTag`。第二個參數寫 `{ expire: 0 }`，意思是「舊的快取不要再給任何人，下一個請求等新的」，這樣用 API 新增完留言，馬上用 `GET` 就能看到。
 
 ### 用 `curl` 試試看

@@ -69,14 +69,14 @@ Error: Route "/books/[id]": Next.js encountered uncached or runtime data during 
 `fetch(...)`, `cookies()`, `headers()`, `params`, `searchParams`, or `connection()` accessed outside of `<Suspense>` prevents the route from being prerendered, blocking the page load and leading to a slower user experience.
 ```
 
-意思是：「這個路由在預先渲染的時候，碰到了執行期才會知道的資料（`params`），而且它不在 `<Suspense>` 外面保護。」因為不加 `generateStaticParams`，Next.js 在建置時根本不知道 `id` 會是什麼，沒辦法把頁面準備好。這是 Cache Components 開著的緣故。
+意思是：「這個路由在預先渲染的時候，碰到了執行期才會知道的資料（`params`），而且它沒有被 `<Suspense>` 包住。」因為不加 `generateStaticParams`，Next.js 在建置時根本不知道 `id` 會是什麼，沒辦法把頁面準備好。這是 Cache Components 開著的緣故。
 
 解決的方法有兩個：
 
 - **告訴它有哪些網址**：這就是 `generateStaticParams` 做的事，也是這一集採用的做法。
 - **用 `<Suspense>` 包起來**，讓頁面先送出一個外殼，資料之後再補上。第 8 集和第 13 章會講。
 
-在開發伺服器（`npm run dev`）上，拿掉 `generateStaticParams` 之後頁面還是會正常顯示，不一定會擋你。所以養成習慣，改完重要的東西就跑一次 `npm run build`。
+在開發伺服器（`npm run dev`）上，拿掉 `generateStaticParams` 之後頁面還是會顯示出來，只是終端機會印出類似的錯誤訊息，不會像 `npm run build` 那樣直接失敗。所以養成習慣，改完重要的東西就跑一次 `npm run build`。
 
 把 `generateStaticParams` 放回去，再次執行 `npm run build`，成功之後會看到路由列表：
 

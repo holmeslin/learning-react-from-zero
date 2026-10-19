@@ -88,7 +88,7 @@ x-guestbook: hello
 
 不行。官方文件特別提醒：Server Function 是用 `POST` 請求送到「使用它的那個頁面的網址」，所以如果你的 `matcher` 排除了某個網址，那個網址上的 Server Function 也會跟著略過 `proxy`；或是日後有人把 Server Function 搬到別的頁面，保護就悄悄消失了。
 
-所以，這和第 14 集的結論一樣：**每個 Server Function 自己要檢查權限。** `proxy` 可以當作第一道防線，但不能是唯一一道。
+所以，這和第 14 章的結論一樣：**每個 Server Function 自己要檢查權限。** `proxy` 可以當作第一道防線，但不能是唯一一道。
 
 ## 重點整理
 

@@ -80,7 +80,7 @@ npx eslint .
 
 建立一個故意寫錯的檔案 `src/Bad.jsx`：
 
-```jsx
+```jsx,ignore
 import { useEffect, useState } from "react";
 
 export default function Bad({ show }) {

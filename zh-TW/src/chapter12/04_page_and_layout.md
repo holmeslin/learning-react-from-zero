@@ -60,7 +60,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 - **根 layout 是必要的**，而且一定要自己寫 `<html>` 和 `<body>`。React 的畫面最終都要放進這兩個標籤裡，Next.js 不會替你補。
 - `lang="zh-TW"` 告訴瀏覽器和輔助工具，這個網站的語言是繁體中文。
 - **`children` 就是頁面**。layout 會把目前網址對應的 `page.tsx` 放進 `children` 的位置。所以不管你走到哪一頁，`<header>` 都會在上面。
-- `import "./globals.css"` 把全站的 CSS 引進來。全站 CSS 只能在根 layout 引入。
+- `import "./globals.css"` 把全站的 CSS 引進來。放在根 layout 引入，每一頁都會套用。
 - `metadata` 設定網頁的標題和描述，第 10 集會細講。
 
 存檔後回到瀏覽器，首頁上方多了「小書店」三個字。

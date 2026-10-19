@@ -36,7 +36,7 @@
 
 - JavaScript 用 `js`，含 JSX 的用 `jsx`，TypeScript 用 `ts`，含 JSX 的 TypeScript 用 `tsx`。
 - 終端機指令用 `bash`，執行結果用 `text`。
-- 這四種語言的區塊會在 CI 用 esbuild 檢查語法。只是片段、或故意寫錯來示範錯誤訊息的區塊，在語言後面加 `,ignore`，例如 ` ```js,ignore `。
+- 這四種語言的區塊會在 CI 用 esbuild 檢查語法。語法不完整的片段、或故意寫錯來示範錯誤訊息的區塊，在語言後面加 `,ignore`，例如 ` ```js,ignore `。語法正確、只是執行或建置時才會出錯的示範可以不加。
 - 範例裡的變數名稱用英文，字串內容和註解用繁體中文。
 - 每行不超過 80 個字元，避免網頁上出現橫向捲軸。
 
@@ -69,7 +69,7 @@
 | loop | 迴圈 | 循環 |
 | print（console.log） | 印出 | 打印、輸出 |
 | file | 檔案 | 文件 |
-| folder / directory | 資料夾 | 文件夾、目錄 |
+| folder / directory | 資料夾（「根目錄」「專案根目錄」是台灣慣用語，可以用） | 文件夾、目錄 |
 | code | 程式碼 | 代碼 |
 | program | 程式 | 程序 |
 | software | 軟體 | 軟件 |

@@ -35,6 +35,8 @@ Would you like to use the recommended Next.js defaults?
     No, customize settings - Choose your own preferences
 ```
 
+中間那個「No, reuse previous settings」只有在你之前建過 Next.js 專案時才會出現，第一次執行只會看到另外兩個選項。
+
 選第一個：**Yes, use recommended defaults**。這個選擇會幫你開啟：
 
 - **TypeScript**：第二部全部用它。

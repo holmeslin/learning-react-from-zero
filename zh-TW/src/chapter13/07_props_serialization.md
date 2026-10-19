@@ -37,7 +37,7 @@ export default function ShowType({ data }: { data: unknown }) {
 }
 ```
 
-然後從 Server Component 傳進各種值：
+然後從 Server Component 傳進各種值。暫時把首頁 `app/page.tsx` 換成下面這段，試完再改回來：
 
 ```tsx
 import ShowType from "@/app/ui/show-type";
@@ -86,8 +86,8 @@ function handleLike() {
 
 ```text
 Error: Event handlers cannot be passed to Client Component props.
-  {onLike: function onLike}
-           ^^^^^^^^^^^^^^^
+  <... onLike={function handleLike}>
+              ^^^^^^^^^^^^^^^^^^^^^
 If you need interactivity, consider converting part of this to a Client Component.
 ```
 

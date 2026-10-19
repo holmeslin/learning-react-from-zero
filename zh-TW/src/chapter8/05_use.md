@@ -57,7 +57,7 @@ export default function App() {
 
 ### Promise 必須是「同一個」
 
-注意 `loadUser` 這個函式，它用一個 `cache` 把 Promise 存起來，同樣的 `id` 永遠回傳同一個 Promise。這一點非常重要。
+注意 `loadUser` 這個函式，它用一個 `cache` 把 Promise 存起來，同樣的 `id` 永遠回傳同一個 Promise。這一點非常重要。（`Map` 是 JavaScript 內建的物件，用來存「鍵對應值」：`has(鍵)` 問有沒有、`set(鍵, 值)` 存進去、`get(鍵)` 拿出來。）
 
 元件每次渲染都會重新執行。如果你直接在元件裡寫：
 

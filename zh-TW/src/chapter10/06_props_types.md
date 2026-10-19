@@ -94,7 +94,7 @@ Found 3 errors in the same file, starting at: practice/Wrong.tsx:10
 
 ### `children`
 
-第 4 章學過 `children`：元件標籤中間包的內容。它的型別是 `ReactNode`，意思是「任何 React 能渲染的東西」，包括字串、數字、元素、陣列、`null`：
+第 4 章學過 `children`：元件標籤中間包的內容。它的型別是 `ReactNode`，意思是「任何 React 能渲染的東西」，包括字串、數字、元素、陣列、`null`。建立 `practice/Card.tsx`：
 
 ```tsx
 import type { ReactNode } from "react";
@@ -130,7 +130,7 @@ Found 1 error in practice/Card.tsx:1
 
 ### 函式型的 props
 
-第 5 章學過，要讓子元件通知父元件，會傳一個函式當 props。它的型別寫成函式的樣子：
+第 5 章學過，要讓子元件通知父元件，會傳一個函式當 props。它的型別寫成函式的樣子。建立 `practice/ProductList.tsx`：
 
 ```tsx
 type ProductListProps = {
@@ -151,7 +151,7 @@ export function ProductList({ products, onSelect }: ProductListProps) {
 }
 ```
 
-`(id: number) => void` 讀作：「一個函式，收一個數字 `id`，沒有回傳值」。用的時候：
+`(id: number) => void` 讀作：「一個函式，收一個數字 `id`，沒有回傳值」。用的時候（建立 `practice/ProductApp.tsx`）：
 
 ```tsx
 import { ProductList } from "./ProductList.tsx";

@@ -12,7 +12,7 @@
 
 ### 基本用法
 
-`useNavigate()` 回傳一個函式，傳入網址，就會換頁：
+`useNavigate()` 回傳一個函式，傳入網址，就會換頁。建立 `src/pages/Contact.jsx`：
 
 ```jsx
 import { useNavigate } from "react-router";

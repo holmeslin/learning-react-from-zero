@@ -110,7 +110,7 @@ export default TicketList;
 渲染的時候，這些事都不要做：
 
 - 修改函式外面的變數、物件或陣列。
-- 修改收到的 props（上一集看過，React 不讓你做）。
+- 修改收到的 props（第 7 集看過，React 不讓你做）。
 - 用 `Math.random()` 或 `Date.now()` 決定畫面，因為每次呼叫結果都不同。
 - 直接去動 DOM（例如 `document.title = ...`）、送出網路請求。
 

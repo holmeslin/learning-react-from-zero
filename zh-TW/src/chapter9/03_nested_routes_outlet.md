@@ -66,7 +66,7 @@ export default function App() {
 - 外層的 `Route` **沒有 `path`**，只有 `element`。沒有 `path` 的路由不會在網址上加任何東西，單純是提供版面。這種路由叫 layout route。
 - 首頁改用 `index` 取代 `path="/"`。`index` 的意思是「外層網址剛好符合、沒有更多路徑的時候，顯示這一個」。
 
-網址是 `/about` 時，React Router 會先渲染 `Layout`，再把 `About` 放進 `Layout` 裡面的 `Outlet`。換頁時，`Layout` 本身不會重新建立，只有 `Outlet` 裡的內容換掉。
+網址是 `/about` 時，React Router 會先渲染 `Layout`，再把 `About` 放進 `Layout` 裡面的 `Outlet`。換頁時，`Layout` 本身不會重新建立，只有 `Outlet` 裡的內容換掉。上一集的 `src/Nav.jsx` 已經用不到，可以刪掉。
 
 ### 共同的路徑開頭
 

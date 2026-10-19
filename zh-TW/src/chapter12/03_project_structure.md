@@ -56,6 +56,8 @@ export default nextConfig;
 
 先不要被嚇到。`cacheComponents` 就是前面說的 Cache Components，第 15 章才會細講。不過它現在就會影響你寫程式的方式：讀取還沒準備好的資料時，必須告訴 Next.js 要怎麼處理，我們會在第 6 集和第 8 集遇到。
 
+`partialPrefetching` 和 Cache Components 是一組的，讓 Next.js 在你點連結之前先載入下一頁能事先準備好的部分，保持預設就好。
+
 `turbopack` 那一段是為了 Tailwind CSS 設定的，不用動它。
 
 ### `@/` 是什麼

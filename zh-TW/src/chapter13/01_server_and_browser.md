@@ -70,7 +70,7 @@ BooksPage 在渲染，共有 3 本書
 
 這行字是在終端機裡看到的，因為這段程式是在你的電腦（也就是伺服器）上執行的。它不是在使用者的瀏覽器裡跑，所以 `console.log` 的輸出跑到了伺服器的終端機。
 
-執行 `npm run build` 的時候也會看到一樣的訊息，因為這個頁面在建置時就預先渲染了一次。
+執行 `npm run build` 的時候不會看到這行字，因為這個頁面要等 `getBooks()`，Next.js 把它留到使用者請求時才渲染（這就是第 12 章要你加 `loading.tsx` 的原因）。但是像 `/about` 這種不用等資料的頁面，建置時就會預先渲染一次，裡面的 `console.log` 會在 `npm run build` 的輸出裡出現。用 `npm run build` 加 `npm run start` 跑上線版本時，每次有人打開 `/books`，這行字就會出現在執行 `npm run start` 的終端機。
 
 ### 兩個時間點
 

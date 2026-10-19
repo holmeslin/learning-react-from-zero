@@ -68,7 +68,7 @@ createRoot(document.getElementById('root')).render(
 - 前兩行從 `react` 和 `react-dom/client` 這兩個套件匯入需要的東西。
 - `import './index.css'` 載入全域的樣式檔。
 - `import App from './App.jsx'` 匯入你的第一個元件，名字叫 `App`，下一集會看它的內容。
-- `document.getElementById('root')` 是第 3 章學過的 DOM 操作，找出 `index.html` 裡那個空 `<div>`。
+- `document.getElementById('root')` 和第 3 章學過的 `document.querySelector` 一樣是 DOM 操作，找出 `index.html` 裡那個空 `<div>`。
 - `createRoot(...)` 的意思是「把這個盒子交給 React 管」，`.render(...)` 則是「把這個東西畫進去」。
 - 被畫進去的是 `<StrictMode><App /></StrictMode>`。`App` 就是你的整個應用程式。`StrictMode` 是 React 提供的檢查工具，只在開發時幫你找出可疑的寫法，發布後就沒有作用，第 11 集會用到它。
 

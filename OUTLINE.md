@@ -79,4 +79,4 @@ Pages Router 簡介、React Router 框架模式簡介
 ## 其他檔案
 
 - `foreword.md`、`afterword.md`
-- `GUIDE.md`（AI 助教操作規格）與 `EXERCISES.md`（固定題庫，第 1、2、4、5 章有固定題）：正文寫完再寫
+- `GUIDE.md`（AI 助教操作規格）與 `EXERCISES.md`（固定題庫，第 1、2、4、5 章有固定題）：尚未撰寫。要放在 `zh-TW/src/`，才會被打包進 `react-book-src.zip`；寫好後把前言「搭配 AI 一起學」那段改回提到這份說明

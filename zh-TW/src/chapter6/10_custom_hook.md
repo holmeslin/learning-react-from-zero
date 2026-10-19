@@ -39,7 +39,11 @@ function StatusBar() {
 
 function SaveButton() {
   const isOnline = useOnlineStatus();
-  return <button disabled={!isOnline}>{isOnline ? "儲存" : "斷線中，無法儲存"}</button>;
+  return (
+    <button disabled={!isOnline}>
+      {isOnline ? "儲存" : "斷線中，無法儲存"}
+    </button>
+  );
 }
 
 export default function App() {
@@ -51,6 +55,8 @@ export default function App() {
   );
 }
 ```
+
+`navigator.onLine` 是瀏覽器內建的布林值，表示目前有沒有連上網路；斷線和恢復時，瀏覽器會分別發出 `offline` 和 `online` 事件。
 
 要看效果：打開瀏覽器開發者工具，在「Network」分頁把節流設定改成「Offline」，狀態列和按鈕會立刻變成斷線的樣子，改回來又恢復。
 

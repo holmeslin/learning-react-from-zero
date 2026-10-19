@@ -140,7 +140,7 @@ React 換了一個思考方式。你不再說「**怎麼**一步一步改 DOM」
 
 上面那個計數器，在 React 裡長得像這樣（現在看不懂沒關係，只要感受一下形狀）：
 
-```jsx
+```jsx,ignore
 function Counter() {
   const [count, setCount] = useState(0);
 

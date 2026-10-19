@@ -36,7 +36,7 @@ export default function App() {
 }
 ```
 
-能動，但有兩個問題。看 Console，頁面剛載入時：
+能動（雖然 ESLint 會在 `setFullName` 那行畫紅線），但有兩個問題。看 Console，頁面剛載入時：
 
 ```text
 渲染，fullName 是 
@@ -67,7 +67,7 @@ export default function App() {
 }
 ```
 
-載入時 Console 只有一行：
+載入時 Console 只剩「小明」這一行（`<StrictMode>` 會讓它重複一次，但不會再出現空字串那行）：
 
 ```text
 渲染，fullName 是 小明

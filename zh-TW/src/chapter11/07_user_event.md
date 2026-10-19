@@ -61,7 +61,7 @@ test("連按三下，數字變成 3", async () => {
 
 `user.click` 回傳的是 Promise，使用者操作不是瞬間完成的。如果忘了 `await`：
 
-```tsx
+```tsx,ignore
 user.click(screen.getByRole("button", { name: "加一" }));
 
 expect(screen.getByText("目前數字：1")).toBeInTheDocument();

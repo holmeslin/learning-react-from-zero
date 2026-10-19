@@ -16,7 +16,7 @@ Effect 可以回傳一個函式，叫做**清除函式**（cleanup function）�
 import { useEffect, useState } from "react";
 
 function Clock() {
-  const [now, setNow] = useState(() => new Date());
+  const [now, setNow] = useState(new Date());
 
   useEffect(() => {
     const id = setInterval(() => setNow(new Date()), 1000);
@@ -34,7 +34,9 @@ export default function App() {
 
   return (
     <>
-      <button onClick={() => setShow(!show)}>{show ? "隱藏" : "顯示"}時鐘</button>
+      <button onClick={() => setShow(!show)}>
+        {show ? "隱藏" : "顯示"}時鐘
+      </button>
       {show && <Clock />}
     </>
   );
@@ -46,6 +48,8 @@ export default function App() {
 ```text
 清除計時器
 ```
+
+（頁面剛載入時，Console 其實就已經先印過一次「清除計時器」了，那是 `<StrictMode>` 刻意做的檢查，第 6 集會說明。）
 
 沒有這個清除函式的話，`Clock` 都不在畫面上了，計時器還會繼續每秒呼叫 `setNow`，白白浪費資源。
 

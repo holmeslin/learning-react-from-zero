@@ -55,6 +55,8 @@ export default defineConfig({
 - `environment: "jsdom"`：測試跑在剛才說的假瀏覽器環境裡。
 - `setupFiles`：每個測試檔執行之前，會先跑一次的檔案。
 
+如果你在第 7 章第 4 集啟用了 React Compiler，原本 `plugins` 裡的 `babel({ presets: [reactCompilerPreset()] })` 和它的 `import` 要保留，只在這份設定上加 `test` 那一段就好。
+
 ### 建立 setup 檔
 
 建立 `src/test/setup.ts`：

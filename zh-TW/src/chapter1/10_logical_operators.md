@@ -78,25 +78,33 @@ if (!isLoggedIn) {
 
 可以把好幾個組合在一起，用括號標清楚順序：
 
+規則是：成年人、或是有家長陪同的人可以進場，但前提是要有票。
+
 ```js
 const age = 15;
 const hasParent = true;
-const isStaff = false;
+const hasTicket = true;
 
-if ((age >= 18 || hasParent) || isStaff) {
+if ((age >= 18 || hasParent) && hasTicket) {
   console.log("可以進入");
 }
 ```
+
+```text
+可以進入
+```
+
+這裡的括號很重要。拿掉括號寫成 `age >= 18 || hasParent && hasTicket`，JavaScript 會先算 `&&`，意思就變成「成年人不用票也能進」。`&&` 和 `||` 混在一起時，一定要用括號標清楚你要的順序。
 
 這種時候與其硬塞成一行，不如先把中間結果存成有意義的變數，讀起來清楚很多：
 
 ```js
 const age = 15;
 const hasParent = true;
-const isStaff = false;
+const hasTicket = true;
 
 const isAllowedAge = age >= 18 || hasParent;
-const canEnter = isAllowedAge || isStaff;
+const canEnter = isAllowedAge && hasTicket;
 
 if (canEnter) {
   console.log("可以進入");
